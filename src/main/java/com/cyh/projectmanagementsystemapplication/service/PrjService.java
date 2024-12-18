@@ -9,7 +9,10 @@ import java.util.List;
  * @since 2024/12/18
  */
 public interface PrjService {
+
     List<Prj> selectAllPrj();
 
     Prj selectPrjById(Integer id);
+
+    Long deletePrjById(Integer id);
 }

@@ -3,10 +3,7 @@ package com.cyh.projectmanagementsystemapplication.controller;
 import com.cyh.projectmanagementsystemapplication.data.entity.Prj;
 import com.cyh.projectmanagementsystemapplication.service.impl.PrjServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,18 +14,27 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/test")
+@CrossOrigin
 public class PrjController {
-    //    @Accessors
     @Autowired
     private PrjServiceImpl prjServiceImpl;
 
+    //    查询所有数据
+    @ResponseBody
     @GetMapping("/selectAll")
     public List<Prj> selectAll() {
         return prjServiceImpl.selectAllPrj();
     }
 
+    //    查询单个数据
     @GetMapping("/one/{id}")
     public Prj selectById(@PathVariable("id") Integer id) {
         return prjServiceImpl.selectPrjById(id);
+    }
+
+    //    @DeleteMapping("/del/{id}")
+    @GetMapping("/del/{id}")
+    public void delete(@PathVariable("id") Integer id) {
+        prjServiceImpl.deletePrjById(id);
     }
 }

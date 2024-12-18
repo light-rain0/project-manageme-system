@@ -15,4 +15,5 @@ public interface PrjMapper {
 
     Prj selectPrjById(Integer id);
 
+    Long deletePrjById(Integer id);
 }

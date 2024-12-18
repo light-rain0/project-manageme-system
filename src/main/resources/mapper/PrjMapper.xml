@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cyh.projectmanagementsystemapplication.mapper.PrjMapper">
+    <delete id="deletePrjById">
+        delete
+        from tb_prj
+        where id = #{id}
+    </delete>
 
 
     <select id="selectAllPrj" resultType="com.cyh.projectmanagementsystemapplication.data.entity.Prj">
-        select *
+        select prj.id, prj.prj_name, prj.prj_start_date, prj.prj_end_date, prj.prj_manager, emp_name
         from tb_prj prj,
              tb_emp emp
         where prj.prj_manager = emp.id

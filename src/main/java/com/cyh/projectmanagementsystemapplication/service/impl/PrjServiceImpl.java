@@ -14,7 +14,6 @@ import java.util.List;
  */
 @Service
 public class PrjServiceImpl implements PrjService {
-    //    @Accessors
     @Autowired
     private PrjMapper prjMapper;
 
@@ -26,5 +25,10 @@ public class PrjServiceImpl implements PrjService {
     @Override
     public Prj selectPrjById(Integer id) {
         return prjMapper.selectPrjById(id);
+    }
+
+    @Override
+    public Long deletePrjById(Integer id) {
+        return prjMapper.deletePrjById(id);
     }
 }

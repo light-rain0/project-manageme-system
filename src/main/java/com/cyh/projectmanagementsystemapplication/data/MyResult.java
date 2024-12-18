@@ -1,4 +1,4 @@
-package com.cyh.projectmanagementsystemapplication.data.entity;
+package com.cyh.projectmanagementsystemapplication.data;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
