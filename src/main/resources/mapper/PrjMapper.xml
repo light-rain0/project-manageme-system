@@ -4,13 +4,13 @@
 
 
     <select id="selectAllPrj" resultType="com.cyh.projectmanagementsystemapplication.data.entity.Prj">
-        select prj.id, prj_name, prj_starData, prj_endDate, emp_name
+        select *
         from tb_prj prj,
              tb_emp emp
         where prj.prj_manager = emp.id
     </select>
     <select id="selectPrjById" resultType="com.cyh.projectmanagementsystemapplication.data.entity.Prj">
-        select *
+        select id, prj_name, prj_start_date, prj_end_date, prj_manager
         from tb_prj
         where id = #{id};
     </select>

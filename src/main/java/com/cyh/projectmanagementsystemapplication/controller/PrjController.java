@@ -1,9 +1,8 @@
 package com.cyh.projectmanagementsystemapplication.controller;
 
-import com.cyh.projectmanagementsystemapplication.data.entity.MyResult;
 import com.cyh.projectmanagementsystemapplication.data.entity.Prj;
 import com.cyh.projectmanagementsystemapplication.service.impl.PrjServiceImpl;
-import lombok.experimental.Accessors;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +18,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/test")
 public class PrjController {
-    @Accessors
+    //    @Accessors
+    @Autowired
     private PrjServiceImpl prjServiceImpl;
 
     @GetMapping("/selectAll")
@@ -27,8 +27,8 @@ public class PrjController {
         return prjServiceImpl.selectAllPrj();
     }
 
-    @GetMapping("/one")
-    public Prj selectById(Integer id) {
+    @GetMapping("/one/{id}")
+    public Prj selectById(@PathVariable("id") Integer id) {
         return prjServiceImpl.selectPrjById(id);
     }
 }

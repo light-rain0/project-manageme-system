@@ -39,6 +39,8 @@ public class Prj {
     /**
      * 项目负责人
      */
-    private int prjManager;
+    private Integer prjManager;
+
+    // 所有实体类里面一切类型使用包装类型
 
 }
