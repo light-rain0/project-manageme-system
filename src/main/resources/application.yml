@@ -1,0 +1,7 @@
+#spring.application.name=project-manageme-system
+
+spring:
+  datasource:
+    url: "jdbc:mysql:///project_db"
+    username: root
+    password: 123456
